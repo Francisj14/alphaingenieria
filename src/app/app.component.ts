@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { GalleryModule, GalleryConfig, ThumbnailsPosition } from 'ng-gallery';
+import { GalleryModule, GalleryConfig, ThumbnailsPosition, GalleryItem, ImageItem } from 'ng-gallery';
 import { Observable, map } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
@@ -23,13 +23,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  
   title = 'alpha';
-
   galleryConfig$: Observable<GalleryConfig>;
-
   constructor(breakpointObserver: BreakpointObserver) {
-
     this.galleryConfig$ = breakpointObserver.observe([
       Breakpoints.HandsetPortrait
     ]).pipe(
@@ -37,28 +33,30 @@ export class AppComponent implements OnInit{
         if (res.matches) {
           return {
             thumbPosition: ThumbnailsPosition.Top,
-            thumbWidth: 80,
-            thumbHeight: 80
+            thumbWidth: 0,
+            thumbHeight: 0
           };
         }
         return {
           thumbPosition: ThumbnailsPosition.Left,
-          thumbWidth: 120,
-          thumbHeight: 90
+          thumbWidth: 0,
+          thumbHeight: 0
         };
       })
     );
   }
-
   images: GalleryItem[];
-  
   ngOnInit() {
     this.images = [
       new ImageItem({
-        src: 'IMAGE_SRC_URL',
-        thumb: 'IMAGE_THUMBNAIL_URL'
-      })
+        src: './assets/h.jpg',
+        thumb: './assets/h.gif'}),
+      new ImageItem({
+        src: './assets/h1.png'}),
+      new ImageItem({
+        src: './assets/h2.jpg'}),
+      new ImageItem({
+        src: './assets/h3.jpg'})
+      ];
   }
-
-
 }

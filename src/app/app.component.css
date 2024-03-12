@@ -50,6 +50,12 @@
     padding: 0%;
   }
 
+  .nav{
+    
+    width: 60vh;
+    padding: 0%;
+  }
+
   .div-rojo {
     background-color: red;
     width: 100%;
