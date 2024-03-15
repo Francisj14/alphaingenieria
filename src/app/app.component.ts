@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { GalleryModule, GalleryConfig, ThumbnailsPosition, GalleryItem, ImageItem } from 'ng-gallery';
 import { Observable, map } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { DocumentationComponent } from './documentation/documentation.component';
 
 
 @Component({
@@ -18,6 +19,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   standalone: true,
   imports: [RouterOutlet,
             HomeComponent,
+            DocumentationComponent,
             GalleryModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
