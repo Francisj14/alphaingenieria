@@ -10,9 +10,8 @@ import 'hammerjs';
 
 
 Build
-
-ng build --configuration production --aot
-
 Deployment
 
+
+ng build --configuration production --aot
 firebase deploy
