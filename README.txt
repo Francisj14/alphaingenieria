@@ -7,3 +7,12 @@ npm popper.js --save
 
 into > src/polyfills.ts
 import 'hammerjs';
+
+
+Build
+
+ng build --configuration production --aot
+
+Deployment
+
+firebase deploy
